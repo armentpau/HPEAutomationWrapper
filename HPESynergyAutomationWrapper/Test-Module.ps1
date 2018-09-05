@@ -23,13 +23,13 @@
 
 
 #Explicitly import the module for testing
-Import-Module 'HPESynergyAutomationWrapper'
+Import-Module 'HPEOneViewAutomationWrapper'
 
 #Run each module function
 Write-HelloWorld
 
 #Sample Pester Test
-#Describe "Test HPESynergyAutomationWrapper" {
+#Describe "Test HPEOneViewAutomationWrapper" {
 #	It "tests Write-HellowWorld" {
 #		Write-HelloWorld | Should BeExactly "Hello World"
 #	}	

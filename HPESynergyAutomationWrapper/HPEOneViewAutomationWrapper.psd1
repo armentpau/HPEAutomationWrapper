@@ -4,11 +4,11 @@
 	 Created on:   	8/30/2018 4:19 PM
 	 Created by:   	949237a
 	 Organization: 	
-	 Filename:     	HPESynergyAutomationWrapper.psd1
+	 Filename:     	HPEOneViewAutomationWrapper.psd1
 	 -------------------------------------------------------------------------
 	 Module Manifest
 	-------------------------------------------------------------------------
-	 Module Name: HPESynergyAutomationWrapper
+	 Module Name: HPEOneViewAutomationWrapper
 	===========================================================================
 #>
 
@@ -16,7 +16,7 @@
 @{
 	
 	# Script module or binary module file associated with this manifest
-	ModuleToProcess = 'HPESynergyAutomationWrapper.psm1'
+	ModuleToProcess = 'HPEOneViewAutomationWrapper.psm1'
 	
 	# Version number of this module.
 	ModuleVersion = '1.0.0.1'
@@ -76,7 +76,7 @@
 	NestedModules = @()
 	
 	# Functions to export from this module
-	FunctionsToExport = @("ConvertFrom-Base64StringToObject","ConvertTo-Base64StringFromObject","Get-ScriptName","Reset-ServerPowerGen10","Reset-ServerPowerGen9","Set-OneTimeBootGen10","Set-OneTimeBootGen9","Set-VirtualMediaGen10","Set-VirtualMediaGen9") #For performance, list functions explicitly
+	FunctionsToExport = @("ConvertFrom-Base64StringToObject","ConvertTo-Base64StringFromObject","Get-ScriptName","Reset-ServerPowerGen10","Reset-ServerPowerGen9","Set-OneTimeBootGen10","Set-OneTimeBootGen9","Set-VirtualMediaGen10","Set-VirtualMediaGen9", "New-SSOIloSession") #For performance, list functions explicitly
 	
 	# Cmdlets to export from this module
 	CmdletsToExport = '*' 

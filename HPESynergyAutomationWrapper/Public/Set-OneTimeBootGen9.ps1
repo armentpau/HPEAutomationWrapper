@@ -11,7 +11,7 @@
 		$iLOsession
 	)
 	
-	$Systems = Get-HPRESTDataRaw -Href $RESTSystems -Session $iLOsession
+	$Systems = Get-HPRESTDataRaw -Href "/rest/v1/Systems" -Session $iLOsession
 	
 	foreach ($sys in $Systems.links.member.href) # /rest/v1/systems/1 or /rest/v1/systems/2
 	{
@@ -39,17 +39,12 @@
 			#process message returned by Set-HPRESTData cmdlet
 			if ($ret.Messages.Count -gt 0)
 			{
-				
 				foreach ($msgID in $ret.Messages)
 				{
-					
 					$status = Get-HPRESTError -MessageID $msgID.MessageID -MessageArg $msgID.MessageArgs -Session $iLOSession
 					$status
-					
-				}
-				
+				}	
 			}
 		}
-		
 	}
 }

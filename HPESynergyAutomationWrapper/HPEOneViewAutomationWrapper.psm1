@@ -4,9 +4,9 @@
 	 Created on:   	8/30/2018 4:19 PM
 	 Created by:   	949237a
 	 Organization: 	
-	 Filename:     	HPESynergyAutomationWrapper.psm1
+	 Filename:     	HPEOneViewAutomationWrapper.psm1
 	-------------------------------------------------------------------------
-	 Module Name: HPESynergyAutomationWrapper
+	 Module Name: HPEOneViewAutomationWrapper
 	===========================================================================
 #>
 $scriptPath = Split-Path $MyInvocation.MyCommand.Path
