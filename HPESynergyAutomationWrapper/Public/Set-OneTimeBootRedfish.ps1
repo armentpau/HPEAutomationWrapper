@@ -1,4 +1,4 @@
-﻿function Set-OneTimeBootGen10
+﻿function Set-OneTimeBootRedfish
 {
 	[CmdletBinding(SupportsShouldProcess = $true)]
 	param
