@@ -1,4 +1,4 @@
-﻿function Reset-ServerPowerGen10
+﻿function Reset-ServerPowerRedfish
 {
 	[CmdletBinding(SupportsShouldProcess = $true)]
 	param

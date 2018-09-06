@@ -1,4 +1,4 @@
-﻿function Set-VirtualMediaGen9
+﻿function Set-VirtualMediaRest
 {
 	[CmdletBinding(SupportsShouldProcess = $true)]
 	param

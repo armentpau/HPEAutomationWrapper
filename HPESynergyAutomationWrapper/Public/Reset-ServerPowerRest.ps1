@@ -1,4 +1,4 @@
-﻿function Reset-ServerPowerGen9
+﻿function Reset-ServerPowerRest
 {
 	[CmdletBinding(SupportsShouldProcess = $true)]
 	param

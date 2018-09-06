@@ -76,7 +76,7 @@
 	NestedModules = @()
 	
 	# Functions to export from this module
-	FunctionsToExport = @("ConvertFrom-Base64StringToObject","ConvertTo-Base64StringFromObject","Get-ScriptName","Reset-ServerPowerGen10","Reset-ServerPowerGen9","Set-OneTimeBootGen10","Set-OneTimeBootGen9","Set-VirtualMediaGen10","Set-VirtualMediaGen9", "New-SSOIloSession") #For performance, list functions explicitly
+	FunctionsToExport = @("ConvertFrom-Base64StringToObject","ConvertTo-Base64StringFromObject","Get-ScriptName","Reset-ServerPowerRedfish","Reset-ServerPowerRest","Set-OneTimeBootRedfish","Set-OneTimeBootRest","Set-VirtualMediaRedfish","Set-VirtualMediaRest", "New-SSOIloSession") #For performance, list functions explicitly
 	
 	# Cmdlets to export from this module
 	CmdletsToExport = '*' 

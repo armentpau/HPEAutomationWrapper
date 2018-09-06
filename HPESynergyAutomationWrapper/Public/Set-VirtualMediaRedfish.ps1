@@ -1,4 +1,4 @@
-﻿function Set-VirtualMediaGen10
+﻿function Set-VirtualMediaRedfish
 {
 	[CmdletBinding(SupportsShouldProcess = $true)]
 	param

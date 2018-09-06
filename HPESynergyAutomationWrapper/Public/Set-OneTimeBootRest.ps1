@@ -1,4 +1,4 @@
-﻿function Set-OneTimeBootGen9
+﻿function Set-OneTimeBootRest
 {
 	[CmdletBinding(SupportsShouldProcess = $true)]
 	param
