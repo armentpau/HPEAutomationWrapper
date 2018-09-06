@@ -17,13 +17,13 @@
 	$rootUri = "https://$iloip/redfish/v1"
 	$returnObject = [pscustomobject]@{
 		"Method"    = $null;
-		"Obj" = $null
+		"Session" = $null
 	}
 	try
 	{
 		$systems = Get-HPERedfishDataRaw -odataid '/redfish/v1/systems/' -Session (new-object PSObject -Property @{ "RootUri" = $rootURI; "X-Auth-Token" = $sessionkey } -ErrorAction Stop) -ErrorAction Stop
 		$returnObject.method = "Redfish"
-		$returnObject.obj = new-object PSObject -Property @{ "RootUri" = $rootURI; "X-Auth-Token" = $sessionkey } -ErrorAction Stop
+		$returnObject.session = new-object PSObject -Property @{ "RootUri" = $rootURI; "X-Auth-Token" = $sessionkey } -ErrorAction Stop
 	}
 	catch
 	{
@@ -32,11 +32,13 @@
 		{
 			$systems = Get-HPRESTDataRaw -Href 'rest/v1/systems' -Session (new-object PSObject -Property @{ "RootUri" = $rootURI; "X-Auth-Token" = $sessionkey } -ErrorAction Stop) -erroraction stop
 			$returnObject.method = "Rest"
-			$returnObject.obj = new-object PSObject -Property @{ "RootUri" = $rootURI; "X-Auth-Token" = $sessionkey } -ErrorAction Stop
+			$returnObject.session = new-object PSObject -Property @{ "RootUri" = $rootURI; "X-Auth-Token" = $sessionkey } -ErrorAction Stop
 		}
 		catch
 		{
-			throw "There was an error creating a SSO Ilo Session for $($Computer.name)  The error is $($psitem.tostring())"
+			$returnObject.method = "There was an error creating a SSO Ilo Session for $($Computer.name)  The error is $($psitem.tostring())"
+			$returnObject.session = "ERROR"
 		}
 	}
+	$returnObject
 }

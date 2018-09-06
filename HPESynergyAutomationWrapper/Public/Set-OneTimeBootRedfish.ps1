@@ -29,5 +29,3 @@
 		$ret = Set-HPERedfishData -odataid $sys -Setting $OneTimeBoot -Session $IloSession
 	}
 }
-
-

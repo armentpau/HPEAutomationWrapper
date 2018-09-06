@@ -19,7 +19,7 @@
 	ModuleToProcess = 'HPEOneViewAutomationWrapper.psm1'
 	
 	# Version number of this module.
-	ModuleVersion = '1.0.0.1'
+	ModuleVersion = '1.0.0.3'
 	
 	# ID used to uniquely identify this module
 	GUID = 'f796c24b-0207-4ee9-b06a-f5b500c997f7'
@@ -37,7 +37,7 @@
 	Description = 'Module description'
 	
 	# Minimum version of the Windows PowerShell engine required by this module
-	PowerShellVersion = '2.0'
+	PowerShellVersion = '3.0'
 	
 	# Name of the Windows PowerShell host required by this module
 	PowerShellHostName = ''
@@ -76,7 +76,17 @@
 	NestedModules = @()
 	
 	# Functions to export from this module
-	FunctionsToExport = @("ConvertFrom-Base64StringToObject","ConvertTo-Base64StringFromObject","Get-ScriptName","Reset-ServerPowerRedfish","Reset-ServerPowerRest","Set-OneTimeBootRedfish","Set-OneTimeBootRest","Set-VirtualMediaRedfish","Set-VirtualMediaRest", "New-SSOIloSession") #For performance, list functions explicitly
+	FunctionsToExport = @(
+		'Set-VirtualMediaRedfish',
+		'Set-VirtualMediaRest',
+		'Set-OneTimeBootRedfish',
+		'Set-OneTimeBootRest',
+		'Reset-ServerPowerRest',
+		'Reset-ServerPowerRedfish',
+		'Get-ScriptName',
+		'ConvertTo-Base64StringFromObject',
+		'ConvertFrom-Base64ToObject'
+	) #For performance, list functions explicitly
 	
 	# Cmdlets to export from this module
 	CmdletsToExport = '*' 
