@@ -77,15 +77,12 @@
 	
 	# Functions to export from this module
 	FunctionsToExport = @(
-		'Set-VirtualMediaRedfish',
-		'Set-VirtualMediaRest',
-		'Set-OneTimeBootRedfish',
-		'Set-OneTimeBootRest',
-		'Reset-ServerPowerRest',
-		'Reset-ServerPowerRedfish',
-		'Get-ScriptName',
-		'ConvertTo-Base64StringFromObject',
-		'ConvertFrom-Base64ToObject'
+		"Start-HPServer",
+		"Stop-HPServer",
+		"Reset-HPServer",
+		"Start-SPPInstall",
+		"Wait-OSInstall",
+		"Wait-ServerBootToLoginScreen"
 	) #For performance, list functions explicitly
 	
 	# Cmdlets to export from this module

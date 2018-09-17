@@ -4,15 +4,17 @@
 	param
 	(
 		[Parameter(ParameterSetName = 'CSV')]
-		[ValidateNotNullOrEmpty()]
 		[ValidateScript({ test-path $_ })]
+		[ValidateNotNullOrEmpty()]
 		[Alias('CSV', 'File', 'FilePath')]
 		[string]$Path,
 		[Parameter(ParameterSetName = 'Computer')]
 		[ValidateNotNullOrEmpty()]
 		[Alias('comp', 'server')]
-		$Computer
+		$Computer,
+		[switch]$Async
 	)
+	
 	BEGIN
 	{
 		try
@@ -35,20 +37,7 @@
 				{
 					foreach ($item in Import-Csv $path)
 					{
-						$ilosession = New-SSOIloSession -Computer (get-hpovserver -servername $($item.servername)) -ErrorAction Stop
-						switch ($ilosession.method)
-						{
-							"Redfish"{
-								ServerPowerRedfish -ilosession $ilosession.session -action "Reset" -PropertyName "ResetType" -PropertyValue $resetValue
-							}
-							"Rest"{
-								ServerPowerRest -ilosession $ilosession.session -action "Reset" -propertyName "ResetType" -propertyValue $resetValue
-							}
-							default
-							{
-								throw "There was an error creating or finding the server $($Computer) with a valid REST method."
-							}
-						}
+						start-hpovserver -inputobject (get-hpovserver -servername $($item.servername)) -async:$($Async.IsPresent)
 					}
 				}
 				else
@@ -58,20 +47,7 @@
 				break
 			}
 			'Computer' {
-				$ilosession = New-SSOIloSession -Computer (get-hpovserver -servername $computer) -ErrorAction Stop
-				switch ($ilosession.method)
-				{
-					"Redfish"{
-						ServerPowerRedfish -ilosession $ilosession.session -action "Reset" -PropertyName "ResetType" -PropertyValue $resetValue
-					}
-					"Rest"{
-						ServerPowerRest -ilosession $ilosession.session -action "Reset" -propertyName "ResetType" -propertyValue $resetValue
-					}
-					default
-					{
-						throw "There was an error creating or finding the server $($Computer) with a valid REST method."
-					}
-				}
+				start-hpovserver -inputobject (get-hpovserver -servername $($computer)) -async:$($Async.IsPresent)
 				break
 			}
 		}

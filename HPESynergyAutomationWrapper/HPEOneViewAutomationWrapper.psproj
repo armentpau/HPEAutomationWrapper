@@ -29,6 +29,7 @@
     <File Build="2">Private\RelevantData.txt</File>
     <File Build="2" Shared="True" ReferenceFunction="Invoke-Test-PDCsv_ps1" ExportFunctions="False">Private\Test-PDCsv.ps1</File>
     <File Build="2" Shared="True" ReferenceFunction="Invoke-Start-HPServer_ps1" ExportFunctions="False">Public\Start-HPServer.ps1</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-Restart-HPServer_ps1" ExportFunctions="False">Public\Restart-HPServer.ps1</File>
   </Files>
   <StartupScript>C:\Users\949237\Documents\Repos\HPEAutomationWrapper\HPESynergyAutomationWrapper\Test-Module.ps1</StartupScript>
 </Project>

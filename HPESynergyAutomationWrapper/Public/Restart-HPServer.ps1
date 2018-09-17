@@ -1,18 +1,18 @@
-﻿function Stop-HPServer
+﻿function ReStart-HPServer
 {
 	[CmdletBinding(DefaultParameterSetName = 'CSV')]
 	param
 	(
-		[switch]$Force,
 		[Parameter(ParameterSetName = 'CSV')]
-		[ValidateScript({ test-path $_ })]
 		[ValidateNotNullOrEmpty()]
+		[ValidateScript({ test-path $_ })]
 		[Alias('CSV', 'File', 'FilePath')]
 		[string]$Path,
 		[Parameter(ParameterSetName = 'Computer')]
 		[ValidateNotNullOrEmpty()]
 		[Alias('comp', 'server')]
 		$Computer,
+		[switch]$ColdBoot,
 		[switch]$Async
 	)
 	
@@ -27,14 +27,7 @@
 		{
 			Throw "Connection to an HPOVMgmt Server is not established.  Please establish a connection first."
 		}
-		if ($force)
-		{
-			$resetValue = "ForceOff"
-		}
-		else
-		{
-			$resetValue = "PushPowerButton"
-		}
+		$resetValue = "PushPowerButton"
 	}
 	PROCESS
 	{
@@ -45,7 +38,7 @@
 				{
 					foreach ($item in Import-Csv $path)
 					{
-						stop-hpovserver -inputobject (get-hpovserver -servername $($item.servername)) -erroraction stop -force:$($force.IsPresent) -async:$($Async.IsPresent) -confirm:$false 
+						start-hpovserver -inputobject (get-hpovserver -servername $($item.servername)) -async:$($Async.IsPresent) -coldboot:$($ColdBoot.IsPresent)
 					}
 				}
 				else
@@ -55,7 +48,7 @@
 				break
 			}
 			'Computer' {
-				stop-hpovserver -inputobject (get-hpovserver -servername $computer) -erroraction stop -force:$($force.IsPresent) -confirm:$false -async:$($Async.IsPresent)
+				start-hpovserver -inputobject (get-hpovserver -servername $($computer)) -async:$($Async.IsPresent) -coldboot:$($ColdBoot.IsPresent)
 				break
 			}
 		}
