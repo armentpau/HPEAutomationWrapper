@@ -1,4 +1,4 @@
-﻿function Reset-ServerPowerRest
+﻿function ServerPowerRest
 {
 	[CmdletBinding(SupportsShouldProcess = $true)]
 	param
@@ -20,7 +20,14 @@
 		$dataToPost.Add($PropertyName, $PropertyValue)
 		
 		# Sending reset request to system using 'POST' in Invoke-HPRESTAction
-		$ret = Invoke-HPRESTAction -Href $sys -Data $dataToPost -Session $iloSession
-		
+		try
+		{
+			$ret = Invoke-HPRESTAction -Href $sys -Data $dataToPost -Session $iloSession -erroraction stop
+			"Successfully sent a shutdown command to the computer"
+		}
+		catch
+		{
+			"There was an error sending a shutdown command to the computer.  The error is $($psitem.tostring())"
+		}
 	}
 }

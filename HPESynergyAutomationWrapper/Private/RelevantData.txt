@@ -1,0 +1,7 @@
+Redfish Allowable Power Options:
+On
+ForceOff
+ForceRestart
+Nmi
+PushPowerButton
+

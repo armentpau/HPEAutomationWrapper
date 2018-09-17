@@ -1,4 +1,4 @@
-﻿function Reset-ServerPowerRedfish
+﻿function ServerPowerRedfish
 {
 	[CmdletBinding(SupportsShouldProcess = $true)]
 	param
@@ -21,7 +21,15 @@
 		$dataToPost.Add($PropertyName, $PropertyValue)
 		
 		# Sending reset request to system using 'POST' in Invoke-HPERedfishAction
-		$ret = Invoke-HPERedfishAction -odataid $sysData.Actions.'#ComputerSystem.Reset'.target -Data $dataToPost -Session $ilosession
+		try
+		{
+			$ret = Invoke-HPERedfishAction -odataid $sysData.Actions.'#ComputerSystem.Reset'.target -Data $dataToPost -Session $ilosession
+			"Successfully sent a shut down command to $($sysData.hostname)."
+		}
+		catch
+		{
+			"There was an error sending a shut down command to $($sysData.hostname).  The error is $($psitem.tostring())"
+		}
 		
 	}
 	
