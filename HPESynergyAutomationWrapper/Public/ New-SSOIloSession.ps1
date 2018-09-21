@@ -11,9 +11,12 @@ function New-SSOIloSession
 		$HPOVServer,
 		[Parameter(ParameterSetName = 'ServerName',
 				   Mandatory = $true)]
-		$HPServer
+		$HPServer,
+		[switch]$DisableHPERedfishCertificateAuthentication
 	)
-	switch ($PSCmdlet.ParameterSetName) {
+	
+	switch ($PSCmdlet.ParameterSetName)
+	{
 		"HPOVSERVER"{
 			#nothing needs to happen here - this is an hpovserver profile
 		}
@@ -28,12 +31,18 @@ function New-SSOIloSession
 			}
 		}
 	}
-	Disable-HPERedfishCertificateAuthentication
+	if ($DisableHPERedfishCertificateAuthentication)
+	{
+		#we are disabling redfish certifcate authentication right now due to issues
+		#with the certifacte authenticity
+		Disable-HPERedfishCertificateAuthentication
+	}
 	$remoteConsole = "$($HPOVServer.uri)/remoteConsoleUrl"
 	$resp = send-hpovrequest $remoteConsole
 	$url, $session = $resp.remoteconsoleUrl.split("&")
 	$http, $iloip = $url.split("=")
 	$sName, $sessionKey = $session.split("=")
+	#testing for redfish first since this is going to be more common version
 	$rootUri = "https://$iloip/redfish/v1"
 	$returnObject = [pscustomobject]@{
 		"Method"  = $null;
@@ -47,6 +56,7 @@ function New-SSOIloSession
 	}
 	catch
 	{
+		#redfish method errored out - so lets try rest
 		$rootUri = "https://$iloip/rest/v1"
 		try
 		{
