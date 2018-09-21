@@ -1,22 +1,42 @@
-﻿function New-SSOIloSession
+﻿Import-Module HPOneView.400
+function New-SSOIloSession
 {
-	[CmdletBinding()]
+	[CmdletBinding(DefaultParameterSetName = 'HPOVServer')]
 	param
 	(
-		[Parameter(Mandatory = $true)]
+		[Parameter(ParameterSetName = 'HPOVServer',
+				   Mandatory = $true)]
 		[ValidateNotNullOrEmpty()]
 		[Alias('Server', 'computername', 'name')]
-		$Computer
+		$HPOVServer,
+		[Parameter(ParameterSetName = 'ServerName',
+				   Mandatory = $true)]
+		$HPServer
 	)
+	switch ($PSCmdlet.ParameterSetName) {
+		"HPOVSERVER"{
+			#nothing needs to happen here - this is an hpovserver profile
+		}
+		"ServerName"{
+			try
+			{
+				$HPOVServer = Get-HPOVServer -ServerName $($hpserver) -ErrorAction Stop
+			}
+			catch
+			{
+				throw "Unable to get a server named $($HPServer) from OneView.  The error is $($psitem.tostring())"
+			}
+		}
+	}
 	Disable-HPERedfishCertificateAuthentication
-	$remoteConsole = "$($Computer.uri)/remoteConsoleUrl"
+	$remoteConsole = "$($HPOVServer.uri)/remoteConsoleUrl"
 	$resp = send-hpovrequest $remoteConsole
 	$url, $session = $resp.remoteconsoleUrl.split("&")
 	$http, $iloip = $url.split("=")
 	$sName, $sessionKey = $session.split("=")
 	$rootUri = "https://$iloip/redfish/v1"
 	$returnObject = [pscustomobject]@{
-		"Method"    = $null;
+		"Method"  = $null;
 		"Session" = $null
 	}
 	try
@@ -36,7 +56,7 @@
 		}
 		catch
 		{
-			$returnObject.method = "There was an error creating a SSO Ilo Session for $($Computer.name)  The error is $($psitem.tostring())"
+			$returnObject.method = "There was an error creating a SSO Ilo Session for $($HPOVServer.name)  The error is $($psitem.tostring())"
 			$returnObject.session = "ERROR"
 		}
 	}
