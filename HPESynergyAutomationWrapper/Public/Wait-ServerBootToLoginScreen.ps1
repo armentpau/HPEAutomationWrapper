@@ -118,5 +118,4 @@
 	
 	$pool.close()
 	$pool.dispose()
-	#endregion
 }

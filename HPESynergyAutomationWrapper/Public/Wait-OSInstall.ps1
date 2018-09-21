@@ -59,5 +59,4 @@
 		}
 	}
 	while ($allIp -eq $false -or $Null -eq $allip)
-	#endregion
 }
