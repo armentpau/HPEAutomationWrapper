@@ -35,7 +35,7 @@
 			else
 			{
 				$allip = $false
-				$lastResponder = $BootObjectArray | Sort-Object -Property time | Select-Object -first 1
+				$lastResponder = $BootObjectArray | Sort-Object -Property endtime| Select-Object -first 1
 				if (-not ([string]::IsNullOrEmpty($lastResponder.endtime)))
 				{
 					$checkTime = Get-Date (Get-Date($lastResponder.endtime)).addhours(1) -Format g
@@ -43,7 +43,7 @@
 					{
 						$lastResponder.endtime = $checkTime
 						$selectedServer = $ServerList | where-object{ $_.serialnumber -eq $($item.serialnumber) }
-						$ilosession = New-SSOIloSession -Computer $selectedServer
+						$ilosession = New-SSOIloSession -HPOVServer $selectedServer
 						switch ($ilosession.method)
 						{
 							"Redfish"{

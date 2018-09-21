@@ -1,5 +1,4 @@
-﻿Import-Module HPOneView.400
-function New-SSOIloSession
+﻿function New-SSOIloSession
 {
 	[CmdletBinding(DefaultParameterSetName = 'HPOVServer')]
 	param
@@ -7,7 +6,7 @@ function New-SSOIloSession
 		[Parameter(ParameterSetName = 'HPOVServer',
 				   Mandatory = $true)]
 		[ValidateNotNullOrEmpty()]
-		[Alias('Server', 'computername', 'name')]
+		[Alias('Server', 'computername', 'name', 'Computer')]
 		$HPOVServer,
 		[Parameter(ParameterSetName = 'ServerName',
 				   Mandatory = $true)]
