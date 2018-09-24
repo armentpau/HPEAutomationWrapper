@@ -84,7 +84,7 @@
 		'Set-StaticIPConfiguration',
 		'Stop-HPServer',
 		'Start-HPServer',
-		'ReStart-HPServer',
+		'Restart-HPServer',
 		'Set-HPFirmware',
 		'Set-HPOneTimeBoot',
 		'Set-HPVirtualMedia'
