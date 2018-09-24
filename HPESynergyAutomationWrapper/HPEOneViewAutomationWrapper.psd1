@@ -19,13 +19,13 @@
 	ModuleToProcess = 'HPEOneViewAutomationWrapper.psm1'
 	
 	# Version number of this module.
-	ModuleVersion = '1.0.0.3'
+	ModuleVersion = '1.0.0.4'
 	
 	# ID used to uniquely identify this module
 	GUID = 'f796c24b-0207-4ee9-b06a-f5b500c997f7'
 	
 	# Author of this module
-	Author = '949237a'
+	Author = 'Paul DeArment Jr'
 	
 	# Company or vendor of this module
 	CompanyName = ''
@@ -34,7 +34,7 @@
 	Copyright = '(c) 2018. All rights reserved.'
 	
 	# Description of the functionality provided by this module
-	Description = 'Module description'
+	Description = 'A collection of functions to help accelerate the usage of HPE Synergy automation'
 	
 	# Minimum version of the Windows PowerShell engine required by this module
 	PowerShellVersion = '3.0'
@@ -77,12 +77,17 @@
 	
 	# Functions to export from this module
 	FunctionsToExport = @(
-		"Start-HPServer",
-		"Stop-HPServer",
-		"Reset-HPServer",
-		"Start-SPPInstall",
-		"Wait-OSInstall",
-		"Wait-ServerBootToLoginScreen"
+		'Get-ScriptName',
+		'New-SSOIloSession',
+		'Wait-OSInstall',
+		'Wait-ServerBootToLoginScreen',
+		'Set-StaticIPConfiguration',
+		'Stop-HPServer',
+		'Start-HPServer',
+		'ReStart-HPServer',
+		'Set-HPFirmware',
+		'Set-HPOneTimeBoot',
+		'Set-HPVirtualMedia'
 	) #For performance, list functions explicitly
 	
 	# Cmdlets to export from this module
