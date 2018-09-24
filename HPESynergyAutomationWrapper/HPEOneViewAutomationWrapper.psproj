@@ -11,28 +11,28 @@
     <File Build="0" ExportFunctions="True">HPEOneViewAutomationWrapper.psm1</File>
     <File Build="1" Shared="False" ReferenceFunction="Invoke-Test-Module_ps1" ExportFunctions="False">Test-Module.ps1</File>
     <File Build="1">.gitignore</File>
-    <File Build="2" Shared="False" ReferenceFunction="Invoke-Set-VirtualMediaRedfish_ps1" ExportFunctions="True">Private\Set-VirtualMediaRedfish.ps1</File>
-    <File Build="2" Shared="False" ReferenceFunction="Invoke-Set-VirtualMediaRest_ps1" ExportFunctions="True">Private\Set-VirtualMediaRest.ps1</File>
-    <File Build="2" Shared="False" ReferenceFunction="Invoke-Set-OneTimeBootRedfish_ps1" ExportFunctions="True">Private\Set-OneTimeBootRedfish.ps1</File>
-    <File Build="2" Shared="False" ReferenceFunction="Invoke-Set-OneTimeBootRest_ps1" ExportFunctions="True">Private\Set-OneTimeBootRest.ps1</File>
-    <File Build="2" Shared="False" ReferenceFunction="Invoke-ServerPowerRest_ps1" ExportFunctions="True">Private\ServerPowerRest.ps1</File>
-    <File Build="2" Shared="False" ReferenceFunction="Invoke-ServerPowerRedfish_ps1" ExportFunctions="True">Private\ServerPowerRedfish.ps1</File>
+    <File Build="2" Shared="False" ReferenceFunction="Invoke-Set-VirtualMediaRedfish_ps1" ExportFunctions="False">Private\Set-VirtualMediaRedfish.ps1</File>
+    <File Build="2" Shared="False" ReferenceFunction="Invoke-Set-VirtualMediaRest_ps1" ExportFunctions="False">Private\Set-VirtualMediaRest.ps1</File>
+    <File Build="2" Shared="False" ReferenceFunction="Invoke-Set-OneTimeBootRedfish_ps1" ExportFunctions="False">Private\Set-OneTimeBootRedfish.ps1</File>
+    <File Build="2" Shared="False" ReferenceFunction="Invoke-Set-OneTimeBootRest_ps1" ExportFunctions="False">Private\Set-OneTimeBootRest.ps1</File>
+    <File Build="2" Shared="False" ReferenceFunction="Invoke-ServerPowerRest_ps1" ExportFunctions="False">Private\ServerPowerRest.ps1</File>
+    <File Build="2" Shared="False" ReferenceFunction="Invoke-ServerPowerRedfish_ps1" ExportFunctions="False">Private\ServerPowerRedfish.ps1</File>
     <File Build="2" Shared="False" ReferenceFunction="Invoke-Get-ScriptName_ps1" ExportFunctions="True">Public\Get-ScriptName.ps1</File>
-    <File Build="2" Shared="False" ReferenceFunction="Invoke-ConvertTo-Base64StringFromObject_ps1" ExportFunctions="True">Private\ConvertTo-Base64StringFromObject.ps1</File>
-    <File Build="2" Shared="False" ReferenceFunction="Invoke-ConvertFrom-Base64StringToObject_ps1" ExportFunctions="True">Private\ConvertFrom-Base64StringToObject.ps1</File>
-    <File Build="2" Shared="True" ReferenceFunction="Invoke-_New-SSOIloSession_ps1" ExportFunctions="False">Public\ New-SSOIloSession.ps1</File>
-    <File Build="2" Shared="True" ReferenceFunction="Invoke-Wait-OSInstall_ps1" ExportFunctions="False">Public\Wait-OSInstall.ps1</File>
-    <File Build="2" Shared="True" ReferenceFunction="Invoke-Wait-ServerBootToLoginScreen_ps1" ExportFunctions="False">Public\Wait-ServerBootToLoginScreen.ps1</File>
-    <File Build="2" Shared="True" ReferenceFunction="Invoke-Set-StaticIPConfiguration_ps1" ExportFunctions="False">Public\Set-StaticIPConfiguration.ps1</File>
-    <File Build="2" Shared="True" ReferenceFunction="Invoke-Stop-HPServer_ps1" ExportFunctions="False">Public\Stop-HPServer.ps1</File>
+    <File Build="2" Shared="False" ReferenceFunction="Invoke-ConvertTo-Base64StringFromObject_ps1" ExportFunctions="False">Private\ConvertTo-Base64StringFromObject.ps1</File>
+    <File Build="2" Shared="False" ReferenceFunction="Invoke-ConvertFrom-Base64StringToObject_ps1" ExportFunctions="False">Private\ConvertFrom-Base64StringToObject.ps1</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-_New-SSOIloSession_ps1" ExportFunctions="True">Public\ New-SSOIloSession.ps1</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-Wait-OSInstall_ps1" ExportFunctions="True">Public\Wait-OSInstall.ps1</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-Wait-ServerBootToLoginScreen_ps1" ExportFunctions="True">Public\Wait-ServerBootToLoginScreen.ps1</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-Set-StaticIPConfiguration_ps1" ExportFunctions="True">Public\Set-StaticIPConfiguration.ps1</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-Stop-HPServer_ps1" ExportFunctions="True">Public\Stop-HPServer.ps1</File>
     <File Build="2">Private\RelevantData.txt</File>
     <File Build="2" Shared="True" ReferenceFunction="Invoke-Test-PDCsv_ps1" ExportFunctions="False">Private\Test-PDCsv.ps1</File>
-    <File Build="2" Shared="True" ReferenceFunction="Invoke-Start-HPServer_ps1" ExportFunctions="False">Public\Start-HPServer.ps1</File>
-    <File Build="2" Shared="True" ReferenceFunction="Invoke-Restart-HPServer_ps1" ExportFunctions="False">Public\Restart-HPServer.ps1</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-Start-HPServer_ps1" ExportFunctions="True">Public\Start-HPServer.ps1</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-Restart-HPServer_ps1" ExportFunctions="True">Public\Restart-HPServer.ps1</File>
     <File Build="2" Shared="True" ReferenceFunction="Invoke-Test-PDSCriptBlock_ps1" ExportFunctions="False">Private\Test-PDSCriptBlock.ps1</File>
-    <File Build="2" Shared="True" ReferenceFunction="Invoke-Set-HPFirmware_ps1" ExportFunctions="False">Public\Set-HPFirmware.ps1</File>
-    <File Build="2" Shared="True" ReferenceFunction="Invoke-Set-HPOneTimeBoot_ps1" ExportFunctions="False">Public\Set-HPOneTimeBoot.ps1</File>
-    <File Build="2" Shared="True" ReferenceFunction="Invoke-Set-HPVirtualMedia_ps1" ExportFunctions="False">Public\Set-HPVirtualMedia.ps1</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-Set-HPFirmware_ps1" ExportFunctions="True">Public\Set-HPFirmware.ps1</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-Set-HPOneTimeBoot_ps1" ExportFunctions="True">Public\Set-HPOneTimeBoot.ps1</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-Set-HPVirtualMedia_ps1" ExportFunctions="True">Public\Set-HPVirtualMedia.ps1</File>
   </Files>
   <StartupScript>C:\Users\949237\Documents\Repos\HPEAutomationWrapper\HPESynergyAutomationWrapper\Test-Module.ps1</StartupScript>
 </Project>
