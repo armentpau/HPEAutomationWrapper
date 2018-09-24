@@ -19,7 +19,7 @@
 	ModuleToProcess = 'HPEOneViewAutomationWrapper.psm1'
 	
 	# Version number of this module.
-	ModuleVersion = '1.0.0.4'
+	ModuleVersion = '1.0.0.5'
 	
 	# ID used to uniquely identify this module
 	GUID = 'f796c24b-0207-4ee9-b06a-f5b500c997f7'
@@ -83,8 +83,10 @@
 		'Wait-ServerBootToLoginScreen',
 		'Set-StaticIPConfiguration',
 		'Stop-HPServer',
+		'Test-PDCSV',
 		'Start-HPServer',
 		'Restart-HPServer',
+		'Test-PDScriptBlock',
 		'Set-HPFirmware',
 		'Set-HPOneTimeBoot',
 		'Set-HPVirtualMedia'

@@ -27,7 +27,7 @@
 		"Rest"{
 			try
 			{
-				Set-OneTimeBootRest -BootTarget "Cd" -ilosession $($ilosession.session) -erroraction stop
+				Set-OneTimeBootRest -BootTarget $BootTarget -ilosession $($ilosession.session) -erroraction stop
 				Write-Output "Successfully set $($iLOsession.session.rooturi.tostring()) to boot to $($BootTarget) on next boot."
 			}
 			catch

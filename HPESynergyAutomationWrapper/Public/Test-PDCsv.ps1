@@ -51,8 +51,8 @@
 		}
 		else
 		{
-			$missingHeaders.add($item)
-			$rulesResults.missingHeaders.add($item)
+			$missingHeaders.add($item) | Out-Null
+			$rulesResults.missingHeaders.add($item) | Out-Null
 		}
 	}
 	

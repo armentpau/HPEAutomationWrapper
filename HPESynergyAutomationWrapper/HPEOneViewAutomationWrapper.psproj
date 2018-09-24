@@ -26,10 +26,10 @@
     <File Build="2" Shared="True" ReferenceFunction="Invoke-Set-StaticIPConfiguration_ps1" ExportFunctions="True">Public\Set-StaticIPConfiguration.ps1</File>
     <File Build="2" Shared="True" ReferenceFunction="Invoke-Stop-HPServer_ps1" ExportFunctions="True">Public\Stop-HPServer.ps1</File>
     <File Build="2">Private\RelevantData.txt</File>
-    <File Build="2" Shared="True" ReferenceFunction="Invoke-Test-PDCsv_ps1" ExportFunctions="False">Private\Test-PDCsv.ps1</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-Test-PDCsv_ps1" ExportFunctions="False">Public\Test-PDCsv.ps1</File>
     <File Build="2" Shared="True" ReferenceFunction="Invoke-Start-HPServer_ps1" ExportFunctions="True">Public\Start-HPServer.ps1</File>
     <File Build="2" Shared="True" ReferenceFunction="Invoke-Restart-HPServer_ps1" ExportFunctions="True">Public\Restart-HPServer.ps1</File>
-    <File Build="2" Shared="True" ReferenceFunction="Invoke-Test-PDSCriptBlock_ps1" ExportFunctions="False">Private\Test-PDSCriptBlock.ps1</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-Test-PDSCriptBlock_ps1" ExportFunctions="False">Public\Test-PDSCriptBlock.ps1</File>
     <File Build="2" Shared="True" ReferenceFunction="Invoke-Set-HPFirmware_ps1" ExportFunctions="True">Public\Set-HPFirmware.ps1</File>
     <File Build="2" Shared="True" ReferenceFunction="Invoke-Set-HPOneTimeBoot_ps1" ExportFunctions="True">Public\Set-HPOneTimeBoot.ps1</File>
     <File Build="2" Shared="True" ReferenceFunction="Invoke-Set-HPVirtualMedia_ps1" ExportFunctions="True">Public\Set-HPVirtualMedia.ps1</File>
