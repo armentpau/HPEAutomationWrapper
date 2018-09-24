@@ -1,4 +1,4 @@
-﻿function ReStart-HPServer
+﻿function Restart-HPServer
 {
 	[CmdletBinding(DefaultParameterSetName = 'CSV')]
 	param
